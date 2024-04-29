@@ -14,12 +14,29 @@ grammar = CFG.fromstring
 ("""
 sentence -> play 'of' combo hand
 
-play -> 'bets' | 'folds' | 'calls' | 'raises' | 'checks' | 'allIn'
+play -> 'bets' | 'folds' | 'calls' | 'raises' | 'checks' | 'all in'
 
-combo -> 'pair' 'of' card 'and' card | 'twoPairs' 'of' rank 'and' rank | 'threeOfKind'
- 'of' rank | 'straight' 'of' rank rank rank rank card | 'flush' 'of' rank rank rank rank rank
-| 'fullHouse' 'of' rank rank 'and' rank rank rank | 'pokar' 'of' rank | 
-'straightFlush' 'of' rank rank rank rank card | 'RoyalFlush'
+combo -> highCard | pair | twoPairs | threeOfKind | straight | flush | fullHouse | pokar | straightFlush | royalFlush
+
+highCard -> 'High Card of:' rank
+
+pair -> 'Pair of:' card 'and' card
+
+twoPairs -> 'Two Pairs of:' rank 'and' rank
+
+threeOfKind -> 'Three of a kind of:' rank
+
+straight -> 'Straight of:' rank rank rank rank rank
+
+flush -> 'Flush of:' suit
+
+fullHouse -> 'Full House of:' pair 'and' threeOfKind
+
+pokar -> 'Four of a kind of:' rank
+
+straightFlush -> 'Straight Flush of:' rank rank rank rank card
+
+royalFlush -> 'Royal Flush of A K Q J 10' suit
 
 hand -> card card
 
