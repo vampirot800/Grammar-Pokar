@@ -6,12 +6,18 @@
 
 # Imported libraries
 import nltk
-from nltk import CFG 
+from nltk import CFG
 nltk.download('punkt')
 
-###Library Functions
 # Context-free grammar defined
-grammar = CFG.fromstring(""" """)
+grammar = CFG.fromstring
+("""
+combo -> 'pair' | 'twoPair' | 'threeOfKind' | 'straight' | 'flush' | 'fullHouse' | 'pokar' | 'straightFlush' | 'RoyalFlush'
+hand -> card card
+card -> rank suit
+rank -> '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'J' | 'Q' | 'K' | 'A'
+suit -> 'hearts' | 'diamonds' | 'clubs' | 'spades' 
+""")
 
 # Parser with defined grammar
 parser = nltk.ChartParser(grammar)
