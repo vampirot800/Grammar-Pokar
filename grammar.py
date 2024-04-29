@@ -12,9 +12,11 @@ nltk.download('punkt')
 # Context-free grammar defined
 grammar = CFG.fromstring
 ("""
+sentence -> 'play' | 'combo' | 'hand'
+play -> 'bets' | 'folds' | 'calls' | 'raises' | 'checks' | 'allIn'
 combo -> 'pair' | 'twoPair' | 'threeOfKind' | 'straight' | 'flush' | 'fullHouse' | 'pokar' | 'straightFlush' | 'RoyalFlush'
-hand -> card card
-card -> rank suit
+hand -> card card card card card
+card -> rank 'of' suit
 rank -> '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'J' | 'Q' | 'K' | 'A'
 suit -> 'hearts' | 'diamonds' | 'clubs' | 'spades' 
 """)
