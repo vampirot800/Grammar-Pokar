@@ -11,7 +11,7 @@ nltk.download('punkt')
 
 # Context-free grammar defined
 grammar = CFG.fromstring("""
-sentence -> play 'of' combo hand
+sentence -> play 'on' combo
 play -> 'bets' | 'folds' | 'calls' | 'raises' | 'checks' | 'all in'
 combo -> highCard | pair | twoPairs | threeOfKind | straight | flush | fullHouse | pokar | straightFlush | royalFlush
 highCard -> 'High Card of:' rank
