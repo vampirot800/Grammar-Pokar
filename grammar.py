@@ -3,7 +3,6 @@
 # 29 / 04 / 2024
 # Implementation of Computational methods Project: Pokar Grammar
 
-
 # Imported libraries
 import nltk
 from nltk import CFG
@@ -33,12 +32,22 @@ suit -> 'hearts' | 'diamonds' | 'clubs' | 'spades'
 # Parser with defined grammar
 parser = nltk.ChartParser(grammar)
 
-# Test sentence to be parsed
-sentence = "bets on full house of pair of 5 three of 6"
+# List of test sentences to be parsed
+sentences = [
+    "bets on full house of pair of 5 three of 6",
+    "raises with royal flush AKQJ10 of spades",
+    "folds with high card of K"
+]
 
-# Tokenize sentence
-tokens = nltk.word_tokenize(sentence)
+# Function to parse and display the parse trees
+def parse_sentences(sentences):
+    for sentence in sentences:
+        print(f"Sentence: {sentence}")
+        tokens = nltk.word_tokenize(sentence)
+        for tree in parser.parse(tokens):
+            tree.pretty_print()
+        print("\n")
 
-# Parse sentence
-for tree in parser.parse(tokens):
-    tree.pretty_print()
+# Parse the list of sentences
+parse_sentences(sentences)
+
