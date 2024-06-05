@@ -16,7 +16,7 @@ combo -> royalFlush | straightFlush | fullHouse | pokar | straight | flush | thr
 royalFlush -> 'royal' 'flush' 'AKQJ10' preposition suit
 straightFlush -> 'straight' 'flush' preposition rank rank rank rank card
 fullHouse -> 'full' 'house' preposition pair preposition threeOfKind
-pokar -> 'four' preposition 'a' 'kind' preposition rank
+pokar -> 'poker' preposition rank
 straight -> 'straight' preposition rank rank rank rank rank
 flush -> 'flush' preposition suit
 threeOfKind -> 'three' preposition rank
@@ -40,7 +40,7 @@ sentences = [
     "raises with royal flush AKQJ10 of spades",
     "folds with high card of K of clubs",
     "calls on straight of 3 4 5 6 7",
-    "checks with four of a kind of K",
+    "checks with poker of K",
     "goes all in with straight flush of 7 8 9 J Q of diamonds"
 
     #Unsuccesful cases, not following grammar rules (Uncomment lines for testing)
