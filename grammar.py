@@ -35,6 +35,7 @@ parser = nltk.ChartParser(grammar)
 
 # List of test sentences to be parsed
 sentences = [
+    #Correctly parsed Sentences
     "bets on full house of pair of 5 with three of 6",
     "raises with royal flush AKQJ10 of spades",
     "folds with high card of K of clubs",
@@ -42,6 +43,10 @@ sentences = [
     "checks with four of a kind of K",
     "goes all in with straight flush of 7 8 9 J Q of diamonds"
 
+    #Unsuccesful cases, not following grammar rules (Uncomment lines for testing)
+    #"Bets on straight flush of 2 of spades and high card of Q"
+    #"Raises with two pairs of 8 and 9 and goes all in"
+    #"Folds with royal flush of diamonds"
 ]
 
 # Function to parse and display the parse trees
@@ -57,4 +62,14 @@ def parse_sentences(sentences):
 parse_sentences(sentences)
 
 
+# Ambiguity check
+# tokens = nltk.word_tokenize("bets on full house of pair of 5 and three of 6")
 
+# Generate all parse trees for the sentence
+# parse_trees = list(parser.parse(tokens))
+
+# Check if there is more than one parse tree
+# if len(parse_trees) > 1:
+#     print("Ambiguity detected! Multiple parse trees found.")
+# else:
+#     print("No ambiguity detected. Single parse tree found.")
