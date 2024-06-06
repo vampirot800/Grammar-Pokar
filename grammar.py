@@ -10,7 +10,7 @@ nltk.download('punkt')
 
 # Context-free grammar defined
 grammar = CFG.fromstring("""
-test -> play preposition combo
+sentence -> play preposition combo
 play -> 'bets' | 'folds' | 'raises' | 'calls' |'checks'| 'goes' 'all' 'in'
 combo -> royalFlush | straightFlush | fullHouse | pokar | straight | flush | threeOfKind | twoPairs | pair | highCard
 royalFlush -> 'royal' 'flush' 'AKQJ10' preposition suit
