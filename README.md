@@ -18,6 +18,28 @@ I also used a function to check for ambiguity in my grammar, the function genera
 
 (The ambiguity check function is commented below the code)
 
+Grammar:
+```
+test -> play preposition combo
+play -> 'bets' | 'folds' | 'raises' | 'calls' |'checks'| 'goes' 'all' 'in'
+combo -> royalFlush | straightFlush | fullHouse | pokar | straight | flush | threeOfKind | twoPairs | pair | highCard
+royalFlush -> 'royal' 'flush' 'AKQJ10' preposition suit
+straightFlush -> 'straight' 'flush' preposition rank rank rank rank card
+fullHouse -> 'full' 'house' preposition pair preposition threeOfKind
+pokar -> 'poker' preposition rank
+straight -> 'straight' preposition rank rank rank rank rank
+flush -> 'flush' preposition suit
+threeOfKind -> 'three' preposition rank
+twoPairs -> 'two' 'pairs' preposition rank 'and' rank
+pair -> 'pair' preposition rank
+highCard -> 'high' 'card' preposition card
+hand -> card card
+card -> rank preposition suit
+preposition -> 'of' | 'with' | 'on' 
+rank -> '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'J' | 'Q' | 'K' | 'A'
+suit -> 'hearts' | 'diamonds' | 'clubs' | 'spades'
+```
+
 ## Implementation
 I implemented a tester for this grammar using the python library nltk, using functions for parsing and displaying the trees of the succesful test cases (tree pretty print) 
 
@@ -34,7 +56,89 @@ I also provided 3 sentences that should NOT be approved or parsed and provide an
     "Bets on straight flush of 2 of spades and high card of Q"
     "Raises with two pairs of 8 and 9 and goes all in"
     "Folds with royal flush of diamonds"
+```
+    Sentence: bets on full house of pair of 5 with three of 6
+                                        test                                                    
+  _______________________________________|________                                               
+ |        |                                     combo                                           
+ |        |                                       |                                              
+ |        |                                   fullHouse                                         
+ |        |        _______________________________|__________________________________            
+ |        |       |     |        |               pair              |            threeOfKind     
+ |        |       |     |        |        ________|_______         |         ________|_______    
+play preposition  |     |   preposition  |   preposition rank preposition   |   preposition rank
+ |        |       |     |        |       |        |       |        |        |        |       |   
+bets      on     full house      of     pair      of      5       with    three      of      6  
 
+
+
+Sentence: raises with royal flush AKQJ10 of spades
+                          test                              
+   ________________________|_______                          
+  |         |                    combo                      
+  |         |                      |                         
+  |         |                  royalFlush                   
+  |         |         _____________|____________________     
+ play  preposition   |     |       |      preposition  suit 
+  |         |        |     |       |           |        |    
+raises     with    royal flush   AKQJ10        of     spades
+
+
+
+Sentence: folds with high card of K of clubs
+                       test                                   
+   _____________________|________                              
+  |        |                   combo                          
+  |        |                     |                             
+  |        |                  highCard                        
+  |        |        _____________|________________             
+  |        |       |    |        |               card         
+  |        |       |    |        |        ________|________    
+ play preposition  |    |   preposition rank preposition  suit
+  |        |       |    |        |       |        |        |   
+folds     with    high card      of      K        of     clubs
+
+
+
+Sentence: calls on straight of 3 4 5 6 7
+                                       test                        
+   _____________________________________|______                     
+  |        |                                 combo                 
+  |        |                                   |                    
+  |        |                                straight               
+  |        |          _________________________|________________    
+ play preposition    |     preposition rank   rank   rank rank rank
+  |        |         |          |       |      |      |    |    |   
+calls      on     straight      of      3      4      5    6    7  
+
+
+
+Sentence: checks with poker of K
+                    test                 
+   __________________|________            
+  |         |               combo        
+  |         |                 |           
+  |         |               pokar        
+  |         |         ________|_______    
+ play  preposition   |   preposition rank
+  |         |        |        |       |   
+checks     with    poker      of      K  
+
+
+
+Sentence: goes all in with straight flush of 7 8 9 J Q of diamonds
+                                             test                                                          
+       _______________________________________|_________________                                            
+      |            |                                          combo                                        
+      |            |                                            |                                           
+      |            |                                      straightFlush                                    
+      |            |          __________________________________|___________________________                
+      |            |         |       |        |       |         |        |    |            card            
+      |            |         |       |        |       |         |        |    |     ________|_________      
+     play     preposition    |       |   preposition rank      rank     rank rank rank preposition   suit  
+  ____|____        |         |       |        |       |         |        |    |    |        |         |     
+goes all   in     with    straight flush      of      7         8        9    J    Q        of     diamonds
+```
 ## Analysis
 
 The grammar presented can be classified as a Context-Free Grammar (CFG) within the Chomsky Hierarchy Extended Level. Context-Free Grammars are characterized by rules that define how symbols (both terminals and non-terminals) can be combined to form strings. In this grammar, the rules define the syntactic structure of poker-related sentences, including plays, combinations, hands, and individual cards.
