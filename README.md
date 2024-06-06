@@ -14,7 +14,7 @@ The grammar recognizes the language syntaxis for playing poker.
 
 In earlier versions of my grammar, I faced an issue with left recursion. During parsing, certain instances occurred where a non-terminal inadvertently produced itself as the leftmost symbol. To address this, I introduced a new non-terminal preposition, which includes the options 'of', 'with', and 'on'. This addition effectively resolved the left recursion problem and improved the efficiency of the grammar parsing process.
 
-I also used a function to check for ambiguity in my grammar, the function generates all parse trees for the sentence, and in case of more than one parse tree, thw output would be: "Ambiguity detected! Multiple parse trees found." 
+I also used a function to check for ambiguity in my grammar, the function generates all parse trees for the sentence, and in case of more than one parse tree, the output would be: "Ambiguity detected! Multiple parse trees found." 
 
 (The ambiguity check function is commented below the code)
 
@@ -141,6 +141,11 @@ goes all   in     with    straight flush      of      7         8        9    J 
 ```
 ## Analysis
 
-The grammar presented can be classified as a Context-Free Grammar (CFG) within the Chomsky Hierarchy Extended Level. Context-Free Grammars are characterized by rules that define how symbols (both terminals and non-terminals) can be combined to form strings. In this grammar, the rules define the syntactic structure of poker-related sentences, including plays, combinations, hands, and individual cards.
+While researching, I found time complexity for a chart parser in general can have a worst time complexity of: O(n^3*m), where n is the length of the input sentence and m is the number of grammar rules. 
 
+The grammar is not ambigous as checked with the function below the code (only single parse trees are found when testing sentences), and i analyzed the time it took to parse which was : 0.0019066333770751953 seconds which indicates the parsing is efficient in my sentences.
 
+The grammar presented can be classified as a Context-Free Grammar (CFG) within the Chomsky Hierarchy Extended Level. Context-Free Grammars are characterized by rules that define how symbols (both terminals and non-terminals) can be combined to form strings, these generates languages that can be parsed using algorithms like the CYK algorithm and can be recognized by pushdown automata. In this grammar, the rules define the syntactic structure of poker-related sentences, including plays, combinations, hands, and individual cards.
+
+## References:
+Brian & Kristy Roark & Hollingshead. (n.d.). Linear complexity context-free parsing pipelines via chart ... https://aclanthology.org/N09-1073.pdf 
