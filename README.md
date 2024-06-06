@@ -145,7 +145,10 @@ While researching, I found time complexity for a chart parser in general can hav
 
 The grammar is not ambigous as checked with the function below the code (only single parse trees are found when testing sentences), and i analyzed the time it took to parse which was : 0.0019066333770751953 seconds which indicates the parsing is efficient in my sentences.
 
-The grammar presented can be classified as a Context-Free Grammar (CFG) within the Chomsky Hierarchy Extended Level. Context-Free Grammars are characterized by rules that define how symbols (both terminals and non-terminals) can be combined to form strings, these generates languages that can be parsed using algorithms like the CYK algorithm and can be recognized by pushdown automata. In this grammar, the rules define the syntactic structure of poker-related sentences, including plays, combinations, hands, and individual cards.
+The grammar presented can be classified as a Context-Free Grammar (CFG) within the Chomsky Hierarchy Extended Level. Context-Free Grammars are characterized by rules that define how symbols (both terminals and non-terminals) can be combined to form strings. These grammars generate languages that can be parsed using algorithms like the CYK algorithm and can be recognized by pushdown automata. In this grammar, the rules define the syntactic structure of poker-related sentences, including plays, combinations, hands, and individual cards.
+
+Context-Free Grammars allow for the creation of recursive and nested structures, enabling the representation of complex constructs such as poker hands and sequences of plays. The grammar rules specify the possible sequences of actions (like betting, folding, or raising) and the various possible poker hand combinations (such as royal flush, straight flush, or full house).
+
 
 ## References:
 Brian & Kristy Roark & Hollingshead. (n.d.). Linear complexity context-free parsing pipelines via chart ... https://aclanthology.org/N09-1073.pdf 
