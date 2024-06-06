@@ -20,7 +20,7 @@ I also used a function to check for ambiguity in my grammar, the function genera
 
 Grammar:
 ```
-test -> play preposition combo
+sentence -> play preposition combo
 play -> 'bets' | 'folds' | 'raises' | 'calls' |'checks'| 'goes' 'all' 'in'
 combo -> royalFlush | straightFlush | fullHouse | pokar | straight | flush | threeOfKind | twoPairs | pair | highCard
 royalFlush -> 'royal' 'flush' 'AKQJ10' preposition suit
