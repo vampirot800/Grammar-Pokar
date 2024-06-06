@@ -57,77 +57,77 @@ I also provided 3 sentences that should NOT be approved or parsed and provide an
     "Raises with two pairs of 8 and 9 and goes all in"
     "Folds with royal flush of diamonds"
 ```
-    Sentence: bets on full house of pair of 5 with three of 6
-                                        test                                                    
-  _______________________________________|________                                               
- |        |                                     combo                                           
- |        |                                       |                                              
- |        |                                   fullHouse                                         
- |        |        _______________________________|__________________________________            
- |        |       |     |        |               pair              |            threeOfKind     
- |        |       |     |        |        ________|_______         |         ________|_______    
-play preposition  |     |   preposition  |   preposition rank preposition   |   preposition rank
- |        |       |     |        |       |        |       |        |        |        |       |   
-bets      on     full house      of     pair      of      5       with    three      of      6  
+Sentence: bets on full house of pair of 5 with three of 6
+                                        sentence                                                    
+  _________________________________________|__________                                               
+ |        |                                         combo                                           
+ |        |                                           |                                              
+ |        |                                       fullHouse                                         
+ |        |        ___________________________________|__________________________________            
+ |        |       |     |        |                   pair              |            threeOfKind     
+ |        |       |     |        |          __________|_______         |         ________|_______    
+play preposition  |     |   preposition    |     preposition rank preposition   |   preposition rank
+ |        |       |     |        |         |          |       |        |        |        |       |   
+bets      on     full house      of       pair        of      5       with    three      of      6  
 
 
 
 Sentence: raises with royal flush AKQJ10 of spades
-                          test                              
-   ________________________|_______                          
-  |         |                    combo                      
-  |         |                      |                         
-  |         |                  royalFlush                   
-  |         |         _____________|____________________     
- play  preposition   |     |       |      preposition  suit 
-  |         |        |     |       |           |        |    
-raises     with    royal flush   AKQJ10        of     spades
+                         sentence                              
+   _________________________|_________                          
+  |         |                       combo                      
+  |         |                         |                         
+  |         |                     royalFlush                   
+  |         |         ________________|____________________     
+ play  preposition   |      |         |      preposition  suit 
+  |         |        |      |         |           |        |    
+raises     with    royal  flush     AKQJ10        of     spades
 
 
 
 Sentence: folds with high card of K of clubs
-                       test                                   
-   _____________________|________                              
-  |        |                   combo                          
-  |        |                     |                             
-  |        |                  highCard                        
-  |        |        _____________|________________             
-  |        |       |    |        |               card         
-  |        |       |    |        |        ________|________    
- play preposition  |    |   preposition rank preposition  suit
-  |        |       |    |        |       |        |        |   
-folds     with    high card      of      K        of     clubs
+                       sentence                                   
+   _______________________|__________                              
+  |        |                       combo                          
+  |        |                         |                             
+  |        |                      highCard                        
+  |        |        _________________|________________             
+  |        |       |      |          |               card         
+  |        |       |      |          |        ________|________    
+ play preposition  |      |     preposition rank preposition  suit
+  |        |       |      |          |       |        |        |   
+folds     with    high   card        of      K        of     clubs
 
 
 
 Sentence: calls on straight of 3 4 5 6 7
-                                       test                        
-   _____________________________________|______                     
-  |        |                                 combo                 
-  |        |                                   |                    
-  |        |                                straight               
-  |        |          _________________________|________________    
- play preposition    |     preposition rank   rank   rank rank rank
-  |        |         |          |       |      |      |    |    |   
-calls      on     straight      of      3      4      5    6    7  
+                                       sentence                        
+   _______________________________________|________                     
+  |        |                                     combo                 
+  |        |                                       |                    
+  |        |                                    straight               
+  |        |          _____________________________|________________    
+ play preposition    |     preposition   rank     rank   rank rank rank
+  |        |         |          |         |        |      |    |    |   
+calls      on     straight      of        3        4      5    6    7  
 
 
 
 Sentence: checks with poker of K
-                    test                 
-   __________________|________            
-  |         |               combo        
-  |         |                 |           
-  |         |               pokar        
-  |         |         ________|_______    
- play  preposition   |   preposition rank
-  |         |        |        |       |   
-checks     with    poker      of      K  
+                   sentence                 
+   ___________________|__________            
+  |         |                  combo        
+  |         |                    |           
+  |         |                  pokar        
+  |         |          __________|_______    
+ play  preposition    |     preposition rank
+  |         |         |          |       |   
+checks     with     poker        of      K  
 
 
 
 Sentence: goes all in with straight flush of 7 8 9 J Q of diamonds
-                                             test                                                          
+                                           sentence                                                        
        _______________________________________|_________________                                            
       |            |                                          combo                                        
       |            |                                            |                                           
