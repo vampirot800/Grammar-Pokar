@@ -6,9 +6,11 @@ Pokar Syntaxis Grammar
 ## Description
 This grammar directly mirrors the syntax used in playing poker, providing a structured representation of the game's elements. It defines the values of individual cards, the various combinations that players can achieve, and the composition of hands. By capturing the specific language used in poker gameplay, the grammar facilitates the understanding and parsing of poker-related sentences.  
 
-The **modeling technique** I decided to use was parsing tree diagrams for test cases 
+The **modeling technique** I decided to use was an LL(1) parsing table 
 
 ## Model of the Solution
+
+![DFA](LL1ParsingTable.png)
 
 The grammar recognizes the language syntaxis for playing poker.
 
